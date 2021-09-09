@@ -26,8 +26,8 @@ jobs:
     - name: upload tinengine jar
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: TinEngine
-        path: build/libs/TinEngine
+        name: TinEngine.jar
+        path: ./build/libs/TinEngine
         if-no-files-found: error
 
     - name: check tin
@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: code results
-        path: build/reports/checkstyle/main.html
+        path: ./build/reports/checkstyle/main.html
         if-no-files-found: error
 
     - name: stop gradle
