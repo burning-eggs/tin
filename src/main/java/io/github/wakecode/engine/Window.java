@@ -2,6 +2,7 @@ package io.github.wakecode.engine;
 
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.opengl.GL;
 
 import static org.lwjgl.glfw.GLFW.GLFW_FALSE;
 import static org.lwjgl.glfw.GLFW.GLFW_MAXIMIZED;
@@ -11,6 +12,9 @@ import static org.lwjgl.glfw.GLFW.GLFW_VISIBLE;
 import static org.lwjgl.glfw.GLFW.glfwCreateWindow;
 import static org.lwjgl.glfw.GLFW.glfwDefaultWindowHints;
 import static org.lwjgl.glfw.GLFW.glfwInit;
+import static org.lwjgl.glfw.GLFW.glfwMakeContextCurrent;
+import static org.lwjgl.glfw.GLFW.glfwShowWindow;
+import static org.lwjgl.glfw.GLFW.glfwSwapInterval;
 import static org.lwjgl.glfw.GLFW.glfwWindowHint;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
@@ -57,6 +61,16 @@ public class Window {
         glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE); // default: false
 
         glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL); // window
+
+        if (glfwWindow == NULL) {
+            throw new IllegalStateException("[TIN ERROR] Failed to create a window");
+        }
+
+        glfwMakeContextCurrent(glfwWindow); // context current creation
+        glfwSwapInterval(1); // vsync
+        glfwShowWindow(glfwWindow);
+
+        GL.createCapabilities();
     }
 
     public void loop() {

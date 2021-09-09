@@ -1,7 +1,5 @@
 # Idea
 .idea/
-.gradle/
-gradle/
 build/
 
 # Compiled class file
