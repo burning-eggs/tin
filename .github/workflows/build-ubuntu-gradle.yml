@@ -20,4 +20,4 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: check stuff
-      run: gradlew check
+      run: .\gradlew.bat check
