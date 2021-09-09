@@ -23,22 +23,8 @@ jobs:
     - name: build tin
       run: .\gradlew.bat check --no-daemon
 
-    - name: upload tinengine jar
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: TinEngine
-        path: build/libs/TinEngine.jar
-        if-no-files-found: error
-
     - name: check tin
       run: .\gradlew.bat check --no-daemon
-
-    - name: upload tinengine checkstyle
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: code results
-        path: ./build/reports/checkstyle/main.html
-        if-no-files-found: error
 
     - name: stop gradle
       run: .\gradlew.bat --stop
