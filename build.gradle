@@ -13,7 +13,7 @@ dependencies {
 // Jar Config
 
 jar {
-    archiveFileName = 'TinEngine'
+    archiveFileName = 'TinEngine.jar'
 }
 
 // Checkstyle
