@@ -1,4 +1,4 @@
-name: Java CI with Gradle
+name: build windows
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -19,7 +19,5 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
-    - name: Exec permission for gradlew
-      run: chmod +x gradlew
-    - name: Build
-      run: ./gradlew build
+    - name: check stuff
+      run: gradlew check
