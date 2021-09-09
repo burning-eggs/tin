@@ -19,5 +19,12 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: gradle
-    - name: check stuff
-      run: .\gradlew.bat check
+
+    - name: build tin
+      run: .\gradlew.bat check --no-daemon
+
+    - name: check tin
+      run: .\gradlew.bat check --no-daemon
+
+    - name: stop gradle
+      run: .\gradlew.bat --stop
