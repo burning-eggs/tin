@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: TinEngine
-        path: ./build/libs/TinEngine.jar
+        path: build/libs/TinEngine.jar
         if-no-files-found: error
 
     - name: check tin
