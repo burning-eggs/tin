@@ -31,7 +31,7 @@ public class MouseListener {
         return MouseListener.instance;
     }
 
-    public static void MousePosCallback(long window, double xpos, double ypos) {
+    public static void mousePosCallback(long window, double xpos, double ypos) {
         get().lastX = get().xPos;
         get().lastY = get().yPos;
         get().xPos = xpos;
@@ -39,7 +39,7 @@ public class MouseListener {
         get().isDragging = get().mouseButtonPressed[0] || get().mouseButtonPressed[1] || get().mouseButtonPressed[2];
     }
 
-    public static void MouseButtonCallback(long window, int button, int action, int mods) {
+    public static void mouseButtonCallback(long window, int button, int action, int mods) {
         if (action == GLFW_PRESS) {
             if (button < get().mouseButtonPressed.length) {
                 get().mouseButtonPressed[button] = true;
