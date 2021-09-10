@@ -36,6 +36,7 @@ public class MouseListener {
         get().lastY = get().yPos;
         get().xPos = xpos;
         get().yPos = ypos;
+        get().isDragging = get().mouseButtonPressed[0] || get().mouseButtonPressed[1] || get().mouseButtonPressed[2];
     }
 
     public static void MouseButtonCallback(long window, int button, int action, int mods) {
